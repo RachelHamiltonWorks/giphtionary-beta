@@ -1,2 +1,2 @@
 # Can-You-Use-It-In-A-Gif-
-M-W / Giphy Mashup for Language Learning
+Merriam-Webster / Giphy Mashup for Language Learning
