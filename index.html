@@ -3,49 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="materialize.css"  media="screen,projection"/>
     <title>G i p h t i o n a r y | Words💖Gifs</title>
 </head>
 <body>
+  <!-- form element for headword text input box / user input -->
+  <form id="headword-form">
 
+    <!-- label for text box -->
+    <label for="headword-input">We don't need this label, we want concise instructions inside the search box</label>
 
+    <!-- text input box -->
+    <input type="text" id="headword-input"><br>
 
-     <!-- import Materialize script -->
-    <script type="text/javascript" src="materialize.js"></script>
-    <!-- import jQuery -->
+    <!-- submit button -->
+    <input id="search-headword" type="submit" value="Search">
+  </form>
 
-    <title>Document</title><link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"  media="screen,projection"/>
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body>
-
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
-    <script type="text/javascript"> //where did the type in this line come from or what is it associated with?
-
-    $.ajax({
-        url: "https://www.dictionaryapi.com/api/v3/references/collegiate/json/preposterous?key=edeb60ac-21d3-4109-93d4-16ae042e92ec",
-        method: "GET"
-    }).then(function(response){
-        console.log(response);
-    });
-
-    $.ajax({
-        url: "http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=hWQiEMajiXFk4g6MjVMs6vw3DMs9MesS&limit=5",
-        method: "GET"
-    }).then(function(response){
-        console.log(response);
-    });
-
-</script>
-
+  <!-- headword entry -->
+  <div id="headword-entry-div"></div>
 </body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="script.js"></script>
+
 </html>
+
+
+<!-- M-W API url
+"https://www.dictionaryapi.com/api/v3/references/collegiate/json/preposterous?key=edeb60ac-21d3-4109-93d4-16ae042e92ec",        -->
+
+<!-- Giphy API url        
+url: "http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=hWQiEMajiXFk4g6MjVMs6vw3DMs9MesS&limit=5", -->
+
+
+
