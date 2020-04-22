@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 function searchDictionaryAndGiphy(headword) {
 
-    // querying m-w [and eventually giphy] api's for the user input headwear, the ?app_id parameter is required, but can equal anything
+    // querying m-w api for the user input headword
     var queryURL = "https://www.dictionaryapi.com/api/v3/references/collegiate/json/" + headword + "?key=edeb60ac-21d3-4109-93d4-16ae042e92ec";
     
     $.ajax({
@@ -10,14 +10,27 @@ function searchDictionaryAndGiphy(headword) {
       method: "GET"
     }).then(function(response) {
 
-      // printing the entire object to console
+    // printing the entire object to console
       console.log(response);
 
-      // constructing HTML containing the headword entry
-      var id = $("<h1>").text(response.id);
-      console.log(response)
+    })
 
-      // Empty the contents of the headword-entry-div, append the content
+    // querying giphy api for the user input headword - needs edits to pull exactly the number of gifs wanted (all gifs?)
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + headword + "&api_key=hWQiEMajiXFk4g6MjVMs6vw3DMs9MesS";
+    
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response) {
+  
+   // printing the entire object to console
+      console.log(response);
+  
+
+   // adding headword to h1 
+   var id = $("<h1>").text(response.id);
+    
+  //  empties the contents of the headword-entry-div, appends the content 
       $("#headword-entry-div").empty();
       $("#headword-entry-div").append(headword, id);
     });
