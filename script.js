@@ -43,6 +43,22 @@ function searchDictionaryAndGiphy(headword) {
     // Storing the headword
     var inputHeadword = $("#headword-input").val().trim();
 
+    $("#bowlDisplay").fadeOut(1000, function(){
+            
+    });
+    $("#def-Display").fadeIn(1000, function(){
+      
+    });
+    $("#pDefDisplay").fadeIn(1000, function(){
+
+    });
+    $("#barDisplay").fadeIn(1000, function(){
+        
+    });
+    $("#footDisplay").fadeIn(1000, function(){
+        alert("Hey");
+    })
+
     // Running the searchDictionaryAndGiphy function(passing in the inputHeadword as an argument)
     searchDictionaryAndGiphy(inputHeadword);
   });
