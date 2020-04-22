@@ -2,33 +2,33 @@
     height: 800px;
     position: relative;
     border: 3px solid blue;
-  }
+}
   
-  .center {
+.center {
     margin: 0;
     position:absolute;
     top: 50%;
     left:50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-  }
+}
   
-  #def-Display {
+#def-Display {
     display: none;
-  }
+}
   
-  #pDefDisplay {
+#pDefDisplay {
     display: none;
-  }
+}
   
-  #barDisplay {
+#barDisplay {
     display: none;
-  }
+}
   
-  /* #bowlDisplay {
+/* #bowlDisplay {
     display:
-  } */
+} */
   
-  #footDisplay {
+#footDisplay {
     display: none;
-  }
+}
