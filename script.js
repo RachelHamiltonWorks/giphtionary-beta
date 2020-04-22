@@ -28,7 +28,7 @@ function searchDictionaryAndGiphy(headword) {
   
 
    // adding headword to h1 
-   var id = $("<h1>").text(response.id);
+   var id = $("<h1>").text(response, id);
     
   //  empties the contents of the headword-entry-div, appends the content 
       $("#likeCatButton").empty();
