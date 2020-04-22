@@ -28,16 +28,16 @@ function searchDictionaryAndGiphy(headword) {
   
 
    // adding headword to h1 
-   var id = $("<h3>").text(response.id);
+   var id = $("<h1>").text(response, id);
     
   //  empties the contents of the headword-entry-div, appends the content 
-      $("#headword-entry").empty();
-      $("#headword-entry").append(headword, id);
+      $("#likeCatButton").empty();
+      $("#likeCatButton").append(headword, id);
     });
-  }
+  };
 
   // event handler for user clicking the search button/pressing enter key
-  $("#search-headword").on("click", function(event) {
+  $("#menu-toggle").on("click", function(event) {
     // Preventing the button from trying to submit the form (aka reload/refresh the page)
     event.preventDefault();
     // Storing the headword
@@ -64,4 +64,4 @@ function searchDictionaryAndGiphy(headword) {
   });
 
 
-})
+});
