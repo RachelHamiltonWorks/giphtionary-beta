@@ -37,25 +37,28 @@ function searchDictionaryAndGiphy(headword) {
     })
 
     // querying giphy api for the user input headword - needs edits to pull exactly the number of gifs wanted (all gifs?)
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + headword + "&api_key=hWQiEMajiXFk4g6MjVMs6vw3DMs9MesS";
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + headword + "&api_key=hWQiEMajiXFk4g6MjVMs6vw3DMs9MesS&limit&limit=50";
     
     $.ajax({
       url: queryURL,
       method: "GET"
-    }).then(function(responseGiph) {
-  
+
+      
+    }).then(function(response) {
    // printing the entire object to console
-      console.log(responseGiph);
+      console.log(response);
+
+      // For simplicity, we will take the first gif (ie. at postion 0)
+      var giphyURL = response.data[0].images.original.url;
+      console.log(giphyURL)
+
+      // add image to div
+      $('#giphySearchResults').attr('src', giphyURL);
   
 
-   // adding headword to h1 
-   var id = $("<div>").text(responseGiph);
-    
-  //  empties the contents of the headword-entry-div, appends the content 
-      $("#likeCatButton").empty();
-      $("#likeCatButton").append(headword, id);
     });
   };
+
 
   // event handler for user clicking the search button/pressing enter key
   $("#menu-toggle").on("click", function(event) {
@@ -77,12 +80,14 @@ function searchDictionaryAndGiphy(headword) {
         
     });
     $("#footDisplay").fadeIn(1000, function(){
-        alert("Hey");
     })
 
     // Running the searchDictionaryAndGiphy function(passing in the inputHeadword as an argument)
     searchDictionaryAndGiphy(inputHeadword);
+    
   });
 
 
 });
+
+
