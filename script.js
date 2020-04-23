@@ -8,11 +8,32 @@ function searchDictionaryAndGiphy(headword) {
     $.ajax({
       url: queryURL,
       method: "GET"
-    }).then(function(response) {
+    }).then(function(responseMW) {
 
     // printing the entire object to console
-      console.log(response);
+      console.log(responseMW);
+    // variable for searched word
+    var searchedWord = $('<h3>').text(responseMW[0].meta.id);
+    console.log(responseMW[0].meta.id);
+    
+    // How do you pronounce the word
+    var sayWord = $('<h5>').text(responseMW[0].hwi.prs[0].mw);
+    console.log(responseMW[0].hwi.prs[0].mw);
+    
+    // Audio recording of the word
+    var verbalWord = $('<audio>').attr("src", "https://media.merriam-webster.com/soundc11/FIRST LETTER" + responseMW[0].hwi.prs[0].sound.audio + ".wav");
+    console.log(responseMW[0].hwi.prs[0].sound.audio);
+    
+    // First definition of the word
+    var wordDefinition1 = $('<h5>').text("1--" + responseMW[0].shortdef[0]);
+    console.log(responseMW[0].shortdef[0]);
+    
+    // Second definition of the word
+    var wordDefinition2 = $('<h5>').text("2--" + responseMW[0].shortdef[1]);
+    console.log(responseMW[0].shortdef[1]);
 
+    $("#headword-entry").empty();
+    $("#headword-entry").append(searchedWord, sayWord, verbalWord, wordDefinition1, wordDefinition2)
     })
 
     // querying giphy api for the user input headword - needs edits to pull exactly the number of gifs wanted (all gifs?)
@@ -21,14 +42,14 @@ function searchDictionaryAndGiphy(headword) {
     $.ajax({
       url: queryURL,
       method: "GET"
-    }).then(function(response) {
+    }).then(function(responseGiph) {
   
    // printing the entire object to console
-      console.log(response);
+      console.log(responseGiph);
   
 
    // adding headword to h1 
-   var id = $("<h1>").text(response, id);
+   var id = $("<div>").text(responseGiph);
     
   //  empties the contents of the headword-entry-div, appends the content 
       $("#likeCatButton").empty();
