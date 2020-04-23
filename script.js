@@ -8,33 +8,55 @@ function searchDictionaryAndGiphy(headword) {
     $.ajax({
       url: queryURL,
       method: "GET"
-    }).then(function(response) {
+    }).then(function(responseMW) {
 
     // printing the entire object to console
-      console.log(response);
+      console.log(responseMW);
+    // variable for searched word
+    var searchedWord = $('<h3>').text(responseMW[0].meta.id);
+    console.log(responseMW[0].meta.id);
+    
+    // How do you pronounce the word
+    var sayWord = $('<h5>').text(responseMW[0].hwi.prs[0].mw);
+    console.log(responseMW[0].hwi.prs[0].mw);
+    
+    // Audio recording of the word
+    var verbalWord = $('<audio>').attr("src", "https://media.merriam-webster.com/soundc11/FIRST LETTER" + responseMW[0].hwi.prs[0].sound.audio + ".wav");
+    console.log(responseMW[0].hwi.prs[0].sound.audio);
+    
+    // First definition of the word
+    var wordDefinition1 = $('<h5>').text("1--" + responseMW[0].shortdef[0]);
+    console.log(responseMW[0].shortdef[0]);
+    
+    // Second definition of the word
+    var wordDefinition2 = $('<h5>').text("2--" + responseMW[0].shortdef[1]);
+    console.log(responseMW[0].shortdef[1]);
 
+    $("#headword-entry").empty();
+    $("#headword-entry").append(searchedWord, sayWord, verbalWord, wordDefinition1, wordDefinition2)
     })
 
     // querying giphy api for the user input headword - needs edits to pull exactly the number of gifs wanted (all gifs?)
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + headword + "&api_key=hWQiEMajiXFk4g6MjVMs6vw3DMs9MesS";
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + headword + "&api_key=hWQiEMajiXFk4g6MjVMs6vw3DMs9MesS&limit&limit=50";
     
     $.ajax({
       url: queryURL,
       method: "GET"
+      
     }).then(function(response) {
-  
    // printing the entire object to console
       console.log(response);
-  
 
-   // adding headword to h1 
-   var id = $("<h1>").text(response, id);
-    
-  //  empties the contents of the headword-entry-div, appends the content 
-      $("#likeCatButton").empty();
-      $("#likeCatButton").append(headword, id);
+      // For simplicity, we will take the first gif (ie. at postion 0)
+      var giphyURL = response.data[0].images.original.url;
+      console.log(giphyURL)
+
+      // add image to div
+      $('#giphySearchResults').attr('src', giphyURL);
+  
     });
   };
+
 
   // event handler for user clicking the search button/pressing enter key
   $("#menu-toggle").on("click", function(event) {
@@ -56,12 +78,14 @@ function searchDictionaryAndGiphy(headword) {
         
     });
     $("#footDisplay").fadeIn(1000, function(){
-        alert("Hey");
     })
 
     // Running the searchDictionaryAndGiphy function(passing in the inputHeadword as an argument)
     searchDictionaryAndGiphy(inputHeadword);
+    
   });
 
 
 });
+
+
