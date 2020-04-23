@@ -42,6 +42,7 @@ function searchDictionaryAndGiphy(headword) {
     $.ajax({
       url: queryURL,
       method: "GET"
+
       
     }).then(function(response) {
    // printing the entire object to console
@@ -54,6 +55,7 @@ function searchDictionaryAndGiphy(headword) {
       // add image to div
       $('#giphySearchResults').attr('src', giphyURL);
   
+
     });
   };
 
