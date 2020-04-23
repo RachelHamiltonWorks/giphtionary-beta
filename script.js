@@ -19,9 +19,15 @@ function searchDictionaryAndGiphy(headword) {
     // How do you pronounce the word
     var sayWord = $('<h5>').text(responseMW[0].hwi.prs[0].mw);
     console.log(responseMW[0].hwi.prs[0].mw);
-    
+
+    // This grabs the first letter of the searched word
+    console.log("search word ",responseMW[0].meta.id)
+    var firstLetter  = responseMW[0].meta.id.slice(0, 1);
+    console.log("letter ",firstLetter)
     // Audio recording of the word
-    var verbalWord = $('<audio>').attr("src", "https://media.merriam-webster.com/soundc11/FIRST LETTER" + responseMW[0].hwi.prs[0].sound.audio + ".wav");
+    var verbalWord = $('<audio controls>');
+    var src  =  $('<source>').attr("src", "https://media.merriam-webster.com/soundc11/"+ firstLetter + "/" + responseMW[0].hwi.prs[0].sound.audio + ".wav");
+    verbalWord.append(src)
     console.log(responseMW[0].hwi.prs[0].sound.audio);
     
     // First definition of the word
@@ -48,12 +54,16 @@ function searchDictionaryAndGiphy(headword) {
    // printing the entire object to console
       console.log(response);
 
+    for(var i =0; i < 5; i++){
       // For simplicity, we will take the first gif (ie. at postion 0)
-      var giphyURL = response.data[0].images.original.url;
+      var giphyURL = response.data[i].images.original.url;
+      var img = $('<img>').attr("src", giphyURL).css({"width": "20%", "height": "300px"});
       console.log(giphyURL)
 
       // add image to div
-      $('#giphySearchResults').attr('src', giphyURL);
+      $('#giphySearchResults').append(img)
+    }
+
   
 
     });
