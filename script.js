@@ -9,7 +9,6 @@ function searchDictionaryAndGiphy(headword) {
       url: queryURL,
       method: "GET"
     }).then(function(responseMW) {
-
     // printing the entire object to console
       console.log(responseMW);
     // variable for searched word
