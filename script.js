@@ -8,7 +8,6 @@ function searchDictionaryAndGiphy(headword) {
       url: queryURL,
       method: "GET"
     }).then(function(responseMW) {
-
     // printing the entire object to console
       console.log(responseMW);
     // variable for searched word
@@ -103,6 +102,7 @@ function searchDictionaryAndGiphy(headword) {
       console.log(response);
 
       var giphyOne = response.data[0].images.original.url;
+
       // var giphyTwo = response.data[1].images.original.url;
 
       $('#firstGiph').attr("src", giphyOne).css({"width": "200px", "height": "200px"});
@@ -111,6 +111,7 @@ function searchDictionaryAndGiphy(headword) {
     for(var i =0; i < 36; i++){
       var giphyURL = response.data[i].images.original.url;
       var img = $('<img>').attr("src", giphyURL).css({"width": "200px", "height": "200px"});
+
       console.log(giphyURL)
 
       // add image to div
@@ -141,11 +142,13 @@ function searchDictionaryAndGiphy(headword) {
 
 
   // event handler for user clicking the search button/pressing enter key
+
   $("#mainSearchButton").on("click", function(event) {
     // Preventing the button from trying to submit the form (aka reload/refresh the page)
     event.preventDefault();
     // Storing the headword
     var inputHeadword = $("#mainSearch").val().trim();
+
 
     $("#originalSearch").fadeOut(1000, function(){
             
