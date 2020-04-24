@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   
+
+  <link rel="shortcut icon" type="image/png" href=""/>
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -25,11 +26,11 @@
 <body>
   
 <!--Below is the NAVBAR, that appears after the button click  -->
-<nav id="barDisplay">
-    <div class="nav-wrapper blue darken-1">
+<nav id="barDisplay>
+    <div class="nav-wrapper">
       <form>
         <div class="input-field">
-          <input autocomplete="off" id="search" type="search" required>
+          <input placeholder="Search for a word, in English or Spanish" autocomplete="off" id="search" type="search" required>
           <label class="label-icon" for="search"><i class="material-icons">search</i></label>
           <i class="material-icons">close</i>
         </div>
@@ -37,49 +38,74 @@
     </div>
 </nav>
 
+<container id="def-Display">
   <!--This is the card, that appears after the button click  -->
-<div id="def-Display" class="row">
-  <div class="col s12 m6 offset-m3">
-    <div class="card">
+
+<div class="row">
+  <div class="col s6">
+    <div class="card" class="definitionStyling">
       <div  class="card-image">
-        <img id="firstGiph" src="https://i.pinimg.com/originals/fc/df/de/fcdfde8e07f200fbabeafeaa75bbf2fe.jpg">
-        <span class="card-title"></span>
-        <a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons">add</i></a>
+        <img id="firstGiph">
+        <a class="btn-floating btn-small waves-effect waves-light freen"><i class="material-icons">arrow_forward</i></a>  
+        <!-- <span class="card-title"></span> -->
+        <a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons">save</i></a>
       </div>
-      <div id="headword-entry" class="card-content">
+      <div class="headword-entry" class="card-content">
         <p>If you see this, we blame Merriam-Webster.</p>
       </div>
     </div>
   </div>
+
+  <!-- <div id="spanishCard">
+    <div class="col s6">
+      <div class="card" class="definitionStyling">
+        <div  class="card-image">
+          <img id="secondGiph">
+          <a class="btn-floating btn-small waves-effect waves-light freen"><i class="material-icons">arrow_forward</i></a>  
+          <span class="card-title"></span>
+          <a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons">save</i></a>
+        </div>
+        <div class="headword-entry" class="card-content">
+          <h1 class="test"></h1>
+          <p>If you see this, we blame Merriam-Webster.</p>
+        </div>
+      </div>
+    </div>
+  </div>   -->
+
 </div>  
-
-
-
+</container>
 
 <!-- The original search bar, in the middle of the page, which disappears on click -->
-<div id="bowlDisplay" class="bowl">
-  <div class="row center">
-    <form id="artist-form">
-      <!-- Label for Text Box -->
-      <label for="artist-input">Search a Word</label>
+<div id="originalSearch">
+  <div class="center">
+    <h1> <img id="mainLogo"src="assets\Images\g4.gif"> </h1>
+    <form>
       <!-- Text Input Box -->
-      <input autocomplete="off" type="text" id="firstSearch"><br>
+      <input placeholder="Search for a word, in English or Spanish"
+       autocomplete="off" type="text" size="30"  id="mainSearch">
+      
+      <!-- <button id="realbox-microphone" class="microphone-icon"></button> -->
+
       <!-- Submit Button -->
-      <input id="firstSearchButton" class="waves-effect waves-light btn" type="submit" value="Giphtionary!">
+      <input id="mainSearchButton" class="waves-effect waves-light btn" type="submit" type="submit" value="Search">
+
     </form>
   </div>
 </div>
 
+
+
 <!-- div to display gifs -->
-<div id="giphySearchResults">
+<div id="giphySearchResults" class="row" class="col s12"></div>
  
-</div>
 
 <!-- Here we have the footer, at the bottom of page, which appears after click -->
-<footer id="footDisplay" style="text-align: center;" class="page-footer blue darken-1">
+
+<footer id="footDisplay" style="text-align: center;" class="page-footer">
   <p>Giphtionary</p>
-  <a href="https://giphy.com/"><img src="PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif" alt="Giph Logo"></a>
-  <a href="https://www.merriam-webster.com/"><img src="MWLogo_LightBG_120x120_2x.png" alt="Merriam-Webster Logo" style="width:50px;height:50px;"></a>
+  <a href="https://giphy.com/"><img src="assets\Images\PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif" alt="Powered By Giphy Logo"></a>
+  <a href="https://www.merriam-webster.com/"><img src="assets\Images\MWLogo_LightBG_120x120_2x.png" alt="Merriam-Webster Logo" style="width:50px;height:50px;"></a>
   <p>THANK YOU FOR LEARNING!</p>
   <p>© 2020 | Rachel, Ben, Atticus, & Cooper</p> 
 </footer> 
