@@ -54,28 +54,50 @@ function searchDictionaryAndGiphy(headword) {
    // printing the entire object to console
       console.log(response);
 
-    for(var i =0; i < 5; i++){
+      var giphyOne = response.data[0].images.original.url;
+
+      $('#firstGiph').attr("src", giphyOne).css({"width": "", "height": "400px"});
+
+    for(var i =0; i < 50; i++){
       // For simplicity, we will take the first gif (ie. at postion 0)
+      
       var giphyURL = response.data[i].images.original.url;
-      var img = $('<img>').attr("src", giphyURL).css({"width": "20%", "height": "300px"});
+      var img = $('<img>').attr("src", giphyURL).css({"width": "", "height": "300px"});
       console.log(giphyURL)
 
       // add image to div
+      
       $('#giphySearchResults').append(img)
+
     }
 
   
 
     });
   };
+  
+  
+  $("#search").on('keypress',function(e) {
+    
+    console.log(e.which);
+    if(e.which == 13) {
+        e.preventDefault();
+        console.log('You pressed enter!');
+        var inputNavHeadword = $("#search").val().trim();
+        console.log(inputNavHeadword);
+        searchDictionaryAndGiphy(inputNavHeadword);
+        $("#giphySearchResults").empty();
+    }
+    
+  });
 
 
   // event handler for user clicking the search button/pressing enter key
-  $("#menu-toggle").on("click", function(event) {
+  $("#firstSearchButton").on("click", function(event) {
     // Preventing the button from trying to submit the form (aka reload/refresh the page)
     event.preventDefault();
     // Storing the headword
-    var inputHeadword = $("#autocomplete-input").val().trim();
+    var inputHeadword = $("#firstSearch").val().trim();
 
     $("#bowlDisplay").fadeOut(1000, function(){
             
