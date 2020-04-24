@@ -109,8 +109,6 @@ function searchDictionaryAndGiphy(headword) {
       // $('#secondGiph').attr("src", giphyTwo).css({"width": "200px", "height": "200px"});
 
     for(var i =0; i < 36; i++){
-      // For simplicity, we will take the first gif (ie. at postion 0)
-      
       var giphyURL = response.data[i].images.original.url;
       var img = $('<img>').attr("src", giphyURL).css({"width": "200px", "height": "200px"});
       console.log(giphyURL)
@@ -154,8 +152,8 @@ function searchDictionaryAndGiphy(headword) {
     });
     $("#def-Display").fadeIn(1000, function(){
       
-    });
-    $("#spanishCard").fadeIn(1000, function(){
+    // });
+    // $("#spanishCard").fadeIn(1000, function(){
       
     });
     $("#barDisplay").fadeIn(1000, function(){
