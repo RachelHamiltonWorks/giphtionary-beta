@@ -170,7 +170,10 @@ function searchDictionaryAndGiphy(headword) {
     
   });
 
+ 
+
 
 });
+
 
 
