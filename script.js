@@ -90,7 +90,7 @@ function searchDictionaryAndGiphy(headword) {
 
 
     // querying giphy api for the user input headword - needs edits to pull exactly the number of gifs wanted (all gifs?)
-    var giphyURL = "http://api.giphy.com/v1/gifs/search?q=" + headword + "&api_key=hWQiEMajiXFk4g6MjVMs6vw3DMs9MesS&limit&limit=36";
+    var giphyURL = "https://api.giphy.com/v1/gifs/search?q=" + headword + "&api_key=hWQiEMajiXFk4g6MjVMs6vw3DMs9MesS&limit&limit=36";
     
     $.ajax({
       url: giphyURL,
@@ -170,7 +170,10 @@ function searchDictionaryAndGiphy(headword) {
     
   });
 
+ 
+
 
 });
+
 
 

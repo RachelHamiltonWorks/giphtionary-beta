@@ -26,7 +26,8 @@
 <body>
   
 <!--Below is the NAVBAR, that appears after the button click  -->
-<nav id="barDisplay>
+
+<nav id="barDisplay">
     <div class="nav-wrapper">
       <form>
         <div class="input-field">
@@ -42,16 +43,17 @@
   <!--This is the card, that appears after the button click  -->
 
 <div class="row">
-  <div class="col s8">
+
+  <div id="saveWordCard" class="col s6">
     <div class="card" class="definitionStyling">
       <div  class="card-image">
         <img id="firstGiph">
-        <a class="btn-floating btn-small waves-effect waves-light freen"><i class="material-icons">arrow_forward</i></a>  
+        <a class="btn-floating btn-small waves-effect waves-light green"><i class="material-icons">arrow_forward</i></a>  
         <!-- <span class="card-title"></span> -->
-        <a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons">save</i></a>
+        <a href="wordSave.html" id="saveBtn" class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons">save</i></a>
       </div>
       <div class="headword-entry" class="card-content">
-        <p>This entry does not have a second definition</p>
+        <p>This entry does not have a second definition.</p>
       </div>
     </div>
   </div>
@@ -103,9 +105,9 @@
 <!-- Here we have the footer, at the bottom of page, which appears after click -->
 
 <footer id="footDisplay" style="text-align: center;" class="page-footer">
-  <p>Giphtionary</p>
-  <a href="https://giphy.com/"><img src="assets\Images\PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif" alt="Powered By Giphy Logo"></a>
-  <a href="https://www.merriam-webster.com/"><img src="assets\Images\MWLogo_LightBG_120x120_2x.png" alt="Merriam-Webster Logo" style="width:50px;height:50px;"></a>
+  <p><a href="index.html"><img src="assets\Images\giphtionary_logo.gif"></a></p>
+  <a href="https://giphy.com/" target="_blank"><img src="assets\Images\PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif" alt="Powered By Giphy Logo"></a>
+  <a href="https://www.merriam-webster.com/" target="_blank"><img src="assets\Images\MWLogo_LightBG_120x120_2x.png" alt="Merriam-Webster Logo" style="width:50px;height:50px;"></a>
   <p>THANK YOU FOR LEARNING!</p>
   <p>© 2020 | Rachel, Ben, Atticus, & Cooper</p> 
 </footer> 
