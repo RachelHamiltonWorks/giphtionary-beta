@@ -8,13 +8,19 @@
     transform: translate(-50%, -50%);
     /* background-image: url("90s-tv-show-header.png"); */
 }
+
+.card {
+    top: 25%;
+    left:25%;
+}
+
 #firstGiph {
     left: 33.3%;
 }
 
-#secondGiph {
+/* #secondGiph {
     left: 33.3%;
-}
+} */
 
 #def-Display {
     display: none;
