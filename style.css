@@ -9,10 +9,10 @@
     /* background-image: url("90s-tv-show-header.png"); */
 }
 
-.card {
+/* .card {
     top: 25%;
     left:25%;
-}
+} */
 
 #firstGiph {
     left: 33.3%;
@@ -42,3 +42,7 @@
     background: linear-gradient(45deg, #f66 0%, #93f, #23DBF9,  #FF64BD 100%);
 }
 
+#footDisplay2 {
+    display: none;
+    background: linear-gradient(45deg, #f66 0%, #93f, #23DBF9,  #FF64BD 100%);
+}
