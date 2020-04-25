@@ -1,4 +1,3 @@
-
 .center {
     margin: 0;
     position:absolute;
@@ -6,21 +5,7 @@
     left:50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-    /* background-image: url("90s-tv-show-header.png"); */
 }
-
-/* .card {
-    top: 25%;
-    left:25%;
-} */
-
-#firstGiph {
-    left: 33.3%;
-}
-
-/* #secondGiph {
-    left: 33.3%;
-} */
 
 #def-Display {
     display: none;
@@ -30,19 +15,21 @@
     font-family: Playfair Display,serif;
 }
 
-
 #barDisplay {
     display: none;
-    background: linear-gradient(45deg, #f66 0%, #93f, #23DBF9, #FF64BD 100%);
+    background:  linear-gradient(45deg, rgb(196, 87, 60) 0%, rgb(255, 171, 171),  rgb(245, 201, 59),  rgb(231, 124, 217) 100%);
 }
-
 
 #footDisplay {
     display: none;
-    background: linear-gradient(45deg, #f66 0%, #93f, #23DBF9,  #FF64BD 100%);
+    background: linear-gradient(45deg, rgb(196, 87, 60) 0%, rgb(255, 171, 171),  rgb(245, 201, 59),  rgb(231, 124, 217) 100%);
 }
 
 #footDisplay2 {
-    display: none;
-    background: linear-gradient(45deg, #f66 0%, #93f, #23DBF9,  #FF64BD 100%);
+    background-color: transparent;
 }
+
+#cardRow {
+    background-color: transparent;
+}
+
