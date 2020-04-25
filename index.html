@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-  <link rel="shortcut icon" type="image/png" href=""/>
-
+  <!-- <link rel="shortcut icon" type="image/png" href="favicon"/> -->
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     
@@ -21,98 +19,66 @@
   
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>G i p h t i o n a r y | Words💖Gifs</title>
+    <title>giphtionary | Language Learning on Loop</title>
 </head>
-<body>
-  
-<!--Below is the NAVBAR, that appears after the button click  -->
 
+<body>
+  <!--navbar, appears (fades in) onclick of mainSearchButton-->
 <nav id="barDisplay">
-    <div class="nav-wrapper">
-      <form>
-        <div class="input-field">
-          <input placeholder="Search for a word, in English or Spanish" autocomplete="off" id="search" type="search" required>
-          <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-    </div>
+  <div class="nav-wrapper">
+    <form>
+      <div class="input-field">
+        <input placeholder="Type a word for a definition and gifs!" autocomplete="off" id="navBarSearch" type="search" required>
+        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+        <i class="material-icons">close</i>
+      </div>
+    </form>
+  </div>
 </nav>
 
-<container id="def-Display">
-  <!--This is the card, that appears after the button click  -->
-
-<div class="row">
-
-  <div id="saveWordCard" class="col s6 offset-s3">
-    <div class="card" class="definitionStyling">
-      <div class="card-image">
-        <img id="firstGiph">
-        <a class="btn-floating btn-small waves-effect waves-light green"><i class="material-icons">arrow_forward</i></a>  
-        <!-- <span class="card-title"></span> -->
-        <a href="wordSave.html" id="saveBtn" class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons">save</i></a>
-      </div>
-      <div class="headword-entry" class="card-content">
-        <p>This entry does not have a second definition.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- <div id="spanishCard">
-    <div class="col s6">
-      <div class="card" class="definitionStyling">
-        <div  class="card-image">
-          <img id="secondGiph">
-          <a class="btn-floating btn-small waves-effect waves-light freen"><i class="material-icons">arrow_forward</i></a>  
-          <span class="card-title"></span>
-          <a class="btn-floating halfway-fab waves-effect waves-light green"><i class="material-icons">save</i></a>
-        </div>
-        <div class="headword-entry" class="card-content">
-          <h1 class="test"></h1>
-          <p>If you see this, we blame Merriam-Webster.</p>
-        </div>
-      </div>
-    </div>
-  </div>   -->
-
-</div>  
-</container>
-
-<!-- The original search bar, in the middle of the page, which disappears on click -->
+  <!-- original/main search field, in the middle of the page, which disappears on click, replaced by navbar search -->
 <div id="originalSearch">
   <div class="center">
     <h1> <img id="mainLogo"src="assets\Images\giphtionary_logo.gif"> </h1>
     <form>
       <!-- Text Input Box -->
-      <input placeholder="Search for a word, in English or Spanish"
+      <input placeholder="Type a word for a definition and gifs!"
        autocomplete="off" type="text" size="30"  id="mainSearch">
-      
-      <!-- <button id="realbox-microphone" class="microphone-icon"></button> -->
-
       <!-- Submit Button -->
       <input id="mainSearchButton" class="waves-effect waves-light btn" type="submit" type="submit" value="Search">
-
     </form>
   </div>
 </div>
-
-
+  
+ <!--definition and gif display card; appears onclick initially, on "enter" in subsequent navbar searches -->
+<container id="def-Display" >
+  <div class="row" style="background-image: url('90s-tv-show-header.png');" id="cardRowContainer">
+   <div id="saveWordCard" class="col s6 offset-s3">
+     <div class="card horizontal" class="definitionStyling">
+        <div class="card-image">
+          <img id="cardGif">
+          <a class="btn-floating btn-small waves-effect waves-light teal lighten-3"><i class="material-icons">arrow_forward</i></a>  
+          <a href="wordSave.html" id="saveBtn" class="btn-floating btn-small waves-effect waves-light indigo"><i class="material-icons">save</i></a>
+       </div>
+       <div class="card-stacked">
+        <div class="headword-entry" class="card-content"></div>
+       </div>
+     </div>
+   </div>
+  </div>  
+</container>
 
 <!-- div to display gifs -->
 <div id="giphySearchResults" class="row" class="col s12"></div>
  
-
-<!-- Here we have the footer, at the bottom of page, which appears after click -->
-
+<!-- footer; appears onclick -->
 <footer id="footDisplay" style="text-align: center;" class="page-footer">
   <p><a href="index.html"><img src="assets\Images\giphtionary_logo.gif"></a></p>
   <a href="https://giphy.com/" target="_blank"><img src="assets\Images\PoweredBy_200_Horizontal_Light-Backgrounds_With_Logo.gif" alt="Powered By Giphy Logo"></a>
   <a href="https://www.merriam-webster.com/" target="_blank"><img src="assets\Images\MWLogo_LightBG_120x120_2x.png" alt="Merriam-Webster Logo" style="width:50px;height:50px;"></a>
-  <p>THANK YOU FOR LEARNING!</p>
+  <h6>Language Learning on Loop&#153</h6>
   <p>© 2020 | Rachel, Ben, Atticus, & Cooper</p> 
 </footer> 
-
-
 
 <!-- JavaScript at end of body for optimized loading -->
 <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -123,10 +89,10 @@
 </html>
 
 
-<!-- M-W API url w/ key added
+<!-- M-W API url, including example search, w/ key added
 url: "https://www.dictionaryapi.com/api/v3/references/collegiate/json/preposterous?key=edeb60ac-21d3-4109-93d4-16ae042e92ec"        -->
 
-<!-- Giphy API url example w/ key added       
+<!-- Giphy API url, including example search, w/ key added       
 url: "http://api.giphy.com/v1/gifs/search?q=ryan+gosling&api_key=hWQiEMajiXFk4g6MjVMs6vw3DMs9MesS&limit=5" -->
 
 <!-- M-W Spanish Dictionary API key: 39c727f0-8f59-4896-8532-707dfb1b035d -->
