@@ -165,6 +165,12 @@ function searchDictionaryAndGiphy(headword) {
     $("#footDisplay").fadeIn(1000, function(){
     })
 
+    $("#footDisplay2").fadeIn(1000, function(){
+    })
+
+  // });
+  
+
     // Running the searchDictionaryAndGiphy function(passing in the inputHeadword as an argument)
     searchDictionaryAndGiphy(inputHeadword);
     
